@@ -12,6 +12,16 @@ var4
 
 var4+3
 
+#문자가 담긴 변수 만들기
+str1 <- 'a'
+str2 <- 'hello world'
+str3 <- c('Hello', 'you')
 
-var1 <- c(1:3)
-var1
+#다양한 함수 사용해보기
+x <- c(1,2,3)
+mean(x)
+max(x)
+min(x)
+
+str5 <- c('Hello', "world", 'is', 'good')
+paste(str5, collapse = "|")
