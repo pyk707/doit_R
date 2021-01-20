@@ -24,4 +24,5 @@ max(x)
 min(x)
 
 str5 <- c('Hello', "world", 'is', 'good')
+#collapse처럼 함수의 옵션을 설정하는 명령어를 '파라미터'라고 함
 paste(str5, collapse = "|")
