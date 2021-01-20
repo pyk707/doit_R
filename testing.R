@@ -5,3 +5,13 @@ var2
 #sequence
 var3 <- seq(1,5)
 var3
+
+#by 써보기
+var4 <- seq(1,10, by=2)
+var4
+
+var4+3
+
+
+var1 <- c(1:3)
+var1
