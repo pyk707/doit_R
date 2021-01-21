@@ -34,5 +34,24 @@ install.packages("readxl")
 library(readxl)
 
 #df_exam <- read_excel("d:/easy_r/excel_exam.xlsx") ← 다른 경로의 파일은 이런 식으로
+#기본 적으로 첫 행을 변수명으로 불러온다
 df_exam = read_excel("excel_exam.xlsx")
 df_exam
+
+mean(df_exam$math)
+
+#만약 첫 행이 변수명이 아니라면
+#다음과 같이 불러옴
+df_exam_novar = read_excel("excel_exam.xlsx", col_names = F)
+df_exam_novar
+
+#sheet가 여러 개라면
+df_exam_sheet <- read_excel("excel_exam.xlsx", sheet = 3)
+df_exam_sheet
+
+
+
+#csv파일도 동일
+
+df_csv_exam <- read.csv("csv_exam.txt")
+df_csv_exam
