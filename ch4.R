@@ -64,3 +64,14 @@ df_midterm <- data.frame(english = c(90, 80, 60, 70),
                          math = c(50, 60, 100, 20),
                          class = c(1, 1, 2, 2))
 write.csv(df_midterm, file = "df_midterm.csv")
+
+
+#RDS 파일 이용하기
+#RDS는 R 전용 파일
+#SAVE
+saveRDS(df_midterm, file = "df_midterm.rds")
+#remove 삭제하고 다시 불러보자
+rm(df_midterm)
+#read
+df_midterm <- readRDS("df_midterm.rds")
+df_midterm
