@@ -29,7 +29,6 @@ df_fruites
 
 
 #외부 데이터 이용하기
-
 install.packages("readxl")
 library(readxl)
 
@@ -52,6 +51,16 @@ df_exam_sheet
 
 
 #csv파일도 동일
-
 df_csv_exam <- read.csv("csv_exam.txt")
 df_csv_exam
+
+#문자가 들어있는 csv파일은 stringsAsFactors = F 설정
+df_csv_exam <- read.csv("csv_exam.txt", stringsAsFactors = F)
+df_csv_exam
+
+
+#데이터 프레임 CSV 파일로 저장하기
+df_midterm <- data.frame(english = c(90, 80, 60, 70),
+                         math = c(50, 60, 100, 20),
+                         class = c(1, 1, 2, 2))
+write.csv(df_midterm, file = "df_midterm.csv")
