@@ -85,4 +85,16 @@ new_mpg = rename(new_mpg, mean_value_cty_hwy = cty_plus_hwy)
 new_mpg = rename(new_mpg, mean_pass = mean_cty_hwy)
 
 View(new_mpg)
-new_mpg$grade <- ifelse(new_mpg$mean_v)
+new_mpg$grade <- ifelse(new_mpg$mean_value_cty_hwy >= 30,"A",
+                        ifelse(new_mpg$mean_value_cty_hwy >= 20, "B", "C"))  
+
+table(new_mpg$grade)
+qplot(new_mpg$grade)
+
+
+new_mpg$grade2 <- ifelse(new_mpg$mean_value_cty_hwy >= 30,"A",
+                        ifelse(new_mpg$mean_value_cty_hwy >= 25, "B",
+                               ifelse(new_mpg$mean_value_cty_hwy >= 20, "C", "D")))  
+
+table(new_mpg$grade2)
+qplot(new_mpg$grade2)
