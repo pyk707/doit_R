@@ -1,1 +1,13 @@
+##English
+# Our deepest fear is not that we are not inadequate.
+# Our deepest fear is that we are powerful beyond measure.
+# It is our light, not our darkness, that most frightens us.
+# Your playing small does not serve the world.
+# There is nothing enlightend about shrinking so that other people won't feel insecure around you.
+# We are all meant to shine as children do.
+# It's not just in some of us, it is in everyone.
+# And as we let our own lights shine, we unconsciously give other people permission to do the same.
+# As we are liberated from our own fear, our presence automatically liberates others.
+# by Nelson Mandela
+
 ##데이터 전처리리
