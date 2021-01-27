@@ -11,3 +11,51 @@
 # by Nelson Mandela
 
 ##데이터 전처리리
+
+library(dplyr)
+exam <- read.csv("csv_exam.csv")
+exam
+
+#filter
+exam %>% filter(class == 1)
+exam %>% filter(class == 1 & math > 40)
+exam %>% filter(math>=90 | english >=80)
+
+# %in%을 사용하면 코드를 효율적으로 사용할 수 있음
+# %in%은 매칭을 확인할 때 사용
+exam %>% filter(class %in% c(1,2,3))
+
+class1 <- exam %>% filter(class == 1)
+mean(class1$math)
+
+
+#select
+exam %>% select(math, class)
+exam %>% select(-math)
+
+
+exam %>%
+  filter(class==1) %>%
+  select(math, class)
+
+exam %>%
+  select(id, math) %>%
+  head(10)
+
+#arrange
+exam %>%
+  arrange(math)
+
+exam %>%
+  arrange(desc(math))
+
+exam %>%
+  arrange(class, math)
+
+#mutate
+exam %>%
+  mutate(total = math + english + science)
+
+exam %>%
+  mutate(total = math + english + science,
+         mean = (math + english + science)/3)
