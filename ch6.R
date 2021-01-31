@@ -52,10 +52,43 @@ exam %>%
 exam %>%
   arrange(class, math)
 
-#mutate
+#mutate_파생변수추가
 exam %>%
   mutate(total = math + english + science)
 
 exam %>%
   mutate(total = math + english + science,
          mean = (math + english + science)/3)
+
+exam %>%
+  mutate(test = ifelse(science >= 60, "pass", "fail")) %>%
+  head
+
+exam %>%
+  mutate(total = math + english + science) %>%
+  arrange(total)
+
+
+#summarise()_집단별로 요약하기
+
+exam %>%
+  group_by(class) %>%                   #class별로 분리
+  summarise(mean_math = mean(math),     #math 평균
+            sum_math = sum(math),       #math 합계
+            median_math = median(math), #math 중앙값
+            n = n())                    #학생수(빈도를 나타냄)
+
+head(mpg)
+
+mpg %>%
+  group_by(manufacturer) %>%
+  filter(class == "suv") %>%
+  mutate(tot = (cty+hwy)/2) %>%
+  summarise(mean_tot = mean(tot)) %>%
+  arrange(desc(mean_tot))
+
+
+
+
+#데이터 합치기
+
